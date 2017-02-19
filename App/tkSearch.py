@@ -75,4 +75,6 @@ class toSearch(ttk.Frame):
     def searchRefresh(self):
         self.tlist.current(1)
         self.Field.delete(0, "end")
+        self.tField.delete(0, "end")
+        self.fileField.delete(0, "end")
         return
