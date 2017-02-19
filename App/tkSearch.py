@@ -62,6 +62,7 @@ class toSearch(ttk.Frame):
             
         cli.search(String, totalTime, "Keyword", fileName)
         self.searchRefresh()
+        self.controller.deleteList.updateWindow()
         return
     
     def on_trace_choice(self, name, index, mode):
