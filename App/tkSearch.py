@@ -53,10 +53,14 @@ class toSearch(ttk.Frame):
 
     def searchCommand(self):
         String = self.Field.get() #String a buscar
+        totalTime = self.tField.get()
         typeTime = self.tlist.get() #Puede ser "Semanas" o "Indefinido"
         fileName = self.fileField.get() #Nombre del archivo
-        #AQUI DEBEN PROGRAMAR LA BUSQUEDA EN EL SERVIDOR#
-        #################################################
+        
+        if typeTime == "Indefinido":
+            totalTime = -1
+            
+        cli.search(String, totalTime, "Keyword", fileName)
         self.searchRefresh()
         return
     
