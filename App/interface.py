@@ -1,11 +1,10 @@
-# -*- coding: cp1252 -*-
 import Tkinter as tk
 from Tkinter import *
 import ttk
 from tkSearch import *
 from tkDelete import *
 
-b = "Búsqueda"
+b = "Busqueda"
 t1 = "Keyword"
 t2 = "Usuario"
 t3 = "Procesos"
@@ -22,7 +21,7 @@ class TwitterApp(tk.Tk):
 
         #Tab interface
         self.tab = ttk.Notebook(self)
-
+        
         #Adding titles to tabs
         titles = [b, t3]
         self.frames = {}
@@ -43,6 +42,6 @@ class TwitterApp(tk.Tk):
 
 app = TwitterApp()
 app.title("Twitter App")
-app.geometry('500x380')
+app.geometry('500x500')
 app.mainloop()
         
