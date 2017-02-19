@@ -53,14 +53,20 @@ class toSearch(ttk.Frame):
 
     def searchCommand(self):
         String = self.Field.get() #String a buscar
+        print(String)
         totalTime = self.tField.get()
+        print(totalTime)
         typeTime = self.tlist.get() #Puede ser "Semanas" o "Indefinido"
+        print(typeTime)
         fileName = self.fileField.get() #Nombre del archivo
+        print(fileName)
         
         if typeTime == "Indefinido":
             totalTime = -1
+            print("pase")
             
-        cli.search(String, totalTime, "Keyword", fileName)
+        asd = cli.search(String, totalTime, "Keyword", fileName)
+        print(asd)
         self.searchRefresh()
         self.controller.deleteList.updateWindow()
         return
