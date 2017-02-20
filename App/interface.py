@@ -42,5 +42,5 @@ class TwitterApp(tk.Tk):
 
 app = TwitterApp()
 app.title("Twitter App")
-app.geometry('565x330')
+app.geometry('565x380')
 app.mainloop()
