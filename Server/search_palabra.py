@@ -47,6 +47,5 @@ if __name__ == '__main__':
         if (i < len(sys.argv) - 1):
             busqueda += ' '
     tiempo = sys.argv[len(sys.argv) - 1]
-    # para evitar problemas de sincronizacion
-    #time.sleep(60)
+    
     search(busqueda, tiempo)
