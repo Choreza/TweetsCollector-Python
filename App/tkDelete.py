@@ -10,7 +10,7 @@ t2 = "Usuario"
 t3 = "Eliminar Proceso"
 processes = []
 
-#Template Frame to Delete Processes
+
 class toDelete(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -76,7 +76,6 @@ class toDelete(tk.Frame):
     def onFrameConfigure(self, event):
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
 
-    #Aqui deben modificar!!!------------------------------------------------#
     def endCommand(self):
         for i in range(self.data.getLength()):
             if self.bList[i].get() == 1:
