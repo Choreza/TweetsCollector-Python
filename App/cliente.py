@@ -3,7 +3,6 @@ import os
 import paramiko
 
 
-
 def search(busqueda, currTime, Type, nombreArchivo):
 
     client = paramiko.SSHClient()
@@ -15,7 +14,6 @@ def search(busqueda, currTime, Type, nombreArchivo):
     tipo = Type
 
     # tipo sera una de estas opciones: [search, name, delete]
-
     if tipo == 'Keyword' or tipo == 'Usuario':
         tiempo = currTime
         if tipo == 'Keyword':
@@ -30,7 +28,6 @@ def search(busqueda, currTime, Type, nombreArchivo):
 
 
 # borrar instancias existentes
-
 def delete(pid):
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
