@@ -11,6 +11,7 @@ access_secret = '1Ei0vmDVIOQqifjQAri3wLEqD0T0fU0SgmMXAiA6XWnoj'
 #Maximo de tweets por busqueda
 limite_tweets = 100000000
 
+# Busqueda tweets de usuarios
 def search_by_user(screen_name, ultimo):
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
