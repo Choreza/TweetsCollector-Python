@@ -13,7 +13,7 @@ def search(busqueda, currTime, Type, nombreArchivo):
 
     tipo = Type
 
-    # tipo sera una de estas opciones: [search, name, delete]
+    # tipo sera una de estas opciones: [Keyword, Usuario]
     if tipo == 'Keyword' or tipo == 'Usuario':
         tiempo = currTime
         if tipo == 'Keyword':
