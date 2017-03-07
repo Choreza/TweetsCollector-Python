@@ -1,8 +1,6 @@
 import Tkinter as tk
 from Tkinter import *
 import ttk
-#import search_palabra as sw
-#import search_person as sp
 import cliente as cli
 
 b = "Busqueda por "
@@ -11,7 +9,7 @@ t2 = "Usuario"
 t3 = "Eliminar Proceso"
 processes = []
 
-#Template frame to search something
+
 class toSearch(ttk.Frame):
     def __init__(self, parent, searchType, controller):
         ttk.Frame.__init__(self, parent)
@@ -52,10 +50,10 @@ class toSearch(ttk.Frame):
         self.refresh()
 
     def searchCommand(self):
-        String = self.Field.get() #String a buscar
+        String = self.Field.get() 
         totalTime = self.tField.get()
-        typeTime = self.tlist.get() #Puede ser "Semanas" o "Indefinido"
-        fileName = self.fileField.get() #Nombre del archivo
+        typeTime = self.tlist.get() 
+        fileName = self.fileField.get() 
         
         if typeTime == "Indefinido":
             totalTime = -1
