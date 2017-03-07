@@ -3,15 +3,16 @@ import json
 import time
 import os
 
-#Twitter API credenciales
+# Twitter API credenciales
 consumer_key = '9dI0BvlBlBmQjMB7NdeafUpVK'
 consumer_secret = 'QG3HjzpQ52FgC5lDc7lg2nCX4fiMHzbqAZ1HclYuJ10MXlBWN0'
 access_key = '105785165-8OcCHCUPkz7uDEaLNJrM771Itv9UBFVHKP104biU'
 access_secret = '1Ei0vmDVIOQqifjQAri3wLEqD0T0fU0SgmMXAiA6XWnoj'
 
-#Maximo de tweets por busqueda
+# Maximo de tweets por busqueda
 tweet_limit = 100000000
 
+# Busqueda de tweets segun frase
 def search_by_word(search_word, last_tweet):
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -48,7 +49,7 @@ def search_by_word(search_word, last_tweet):
             break
 
         try:
-            #Borrar print
+            
             if (user.id == last_tweet):
                 break
 
