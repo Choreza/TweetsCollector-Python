@@ -2,13 +2,13 @@ import tweepy
 import json
 import os
 
-#Twitter API credentials
+# Twitter API credentials
 consumer_key = '9dI0BvlBlBmQjMB7NdeafUpVK'
 consumer_secret = 'QG3HjzpQ52FgC5lDc7lg2nCX4fiMHzbqAZ1HclYuJ10MXlBWN0'
 access_key = '105785165-8OcCHCUPkz7uDEaLNJrM771Itv9UBFVHKP104biU'
 access_secret = '1Ei0vmDVIOQqifjQAri3wLEqD0T0fU0SgmMXAiA6XWnoj'
 
-#Maximo de tweets por busqueda
+# Maximo de tweets por busqueda
 limite_tweets = 100000000
 
 # Busqueda tweets de usuarios
