@@ -9,13 +9,14 @@ t2 = "Usuario"
 t3 = "Eliminar Proceso"
 processes = []
 
-#Template frame to search something
+#toSearch Class: Search interface
 class toSearch(ttk.Frame):
     def __init__(self, parent, searchType, controller):
         ttk.Frame.__init__(self, parent)
 
         self.controller = controller
         
+        #Interface stuff
         self.toSearch = ttk.Label(self, text = searchType, justify = LEFT)
         self.toSearch.grid(row = 0, column = 0, padx = 30, pady = 10, sticky = "W")
 
@@ -48,7 +49,8 @@ class toSearch(ttk.Frame):
         self.start.grid(row = 3, column = 3)
         self.var.trace("w", self.on_trace_choice)
         self.refresh()
-
+    
+    #searchCommand Method: Is used after click the "Buscar" button
     def searchCommand(self):
         String = self.Field.get() #String a buscar
         totalTime = self.tField.get()
@@ -63,9 +65,11 @@ class toSearch(ttk.Frame):
         self.controller.deleteList.updateWindow()
         return
     
+    #on_trace_choice Method: Update the checkboxes
     def on_trace_choice(self, name, index, mode):
         self.refresh()
-        
+      
+    #refresh Method: Updates the checkboxes according to the selected search type
     def refresh(self):
         typeTime = self.tlist.get()
         if typeTime == "Indefinido":
@@ -74,7 +78,8 @@ class toSearch(ttk.Frame):
         else:
             self.tField.configure(state = "normal")
         return
-
+    
+    #searchRefresh Method: Updates the window before click the "Buscar" button
     def searchRefresh(self):
         self.tlist.current(1)
         self.Field.delete(0, "end")
