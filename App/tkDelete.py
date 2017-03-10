@@ -14,13 +14,11 @@ processes = []
 class toDelete(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        
+        self.data = Data()                                                            #Data object, used to update the list
 
-        #Data object
-        self.data = Data()
-
-        #Top Frame with raised labels
-        self.topFrame = tk.Frame(self)
-        self.number = tk.Label(self.topFrame, relief = RAISED,
+        self.topFrame = tk.Frame(self)                                                #Top Frame labels, shows the type of element in 
+        self.number = tk.Label(self.topFrame, relief = RAISED,                        #the list below
                                text = " Numero ",
                                anchor = W).grid(row = 0, column = 0)
         self.id = tk.Label(self.topFrame, relief = RAISED,
@@ -29,7 +27,7 @@ class toDelete(tk.Frame):
                              text = 6*" "+"Texto"+30*" ").grid(row = 0, column = 3)
         self.topFrame.grid(row = 0, column = 0, sticky = W)
 
-        #Center Frame which contain the list
+        #Center Frame which contain the list, this lines contains all the list stuff
         self.cframe = tk.Frame(self)
         self.canvas = tk.Canvas(self.cframe, background="#ffffff", width = 300)
         self.frame = tk.Frame(self.canvas, background="#ffffff")
@@ -75,16 +73,16 @@ class toDelete(tk.Frame):
     #Reset the scroll region to encompass the inner frame
     def onFrameConfigure(self, event):
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
-
+    
+    #endCommand Method: Ends the processes list when the "Terminar" button is pushed and update it using the "updateWindow()" method
     def endCommand(self):
         for i in range(self.data.getLength()):
             if self.bList[i].get() == 1:
                 processID = self.data.ID[i]
                 cliente.delete(processID)
-                print "proceso", processID, "seleccionado, por eliminar\n"
-       
         self.updateWindow()
         
+    #updateWindow Method: Updates the list of processes in the window
     def updateWindow(self):
         for widget in self.frame.winfo_children():
             widget.destroy()
