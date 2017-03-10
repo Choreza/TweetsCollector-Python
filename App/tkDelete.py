@@ -10,7 +10,7 @@ t2 = "Usuario"
 t3 = "Eliminar Proceso"
 processes = []
 
-
+#toDelete class: Lists the processes in the server, and is used to delete it
 class toDelete(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
